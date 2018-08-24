@@ -37,7 +37,8 @@ ____
 
 ```apt-get install kubeadm=1.9.0-00
 apt-get install kubelet=1.9.0-00
-apt-get install kubectl=1.9.0-00 ```
+apt-get install kubectl=1.9.0-00 
+```
 ____
 
 配置master
@@ -47,7 +48,8 @@ ____
 ```kubeadm init –pod-network-cidr 10.244.0.0/16```
 2. 配置kubectl
 ```cp /etc/kubernetes/admin.conf ~/.kube/config
-chown 0:0 ~/.kube/config```
+chown 0:0 ~/.kube/config
+```
 3. 把初始化后返回的"kubeadm join --token xxxxxxxx" 记录下来，加入node时需要
 4. 配置CNI
 ```mkdir -p /etc/cni/net.d/ ```
