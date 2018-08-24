@@ -1,8 +1,10 @@
-#准备
+#准备#
+
 1. ```apt-get update```
 2. 配置docker源
 ```vi /etc/apt/sources.list.d/docker.list```
-```deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+```
+deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
@@ -19,13 +21,18 @@ deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted unive
 ```deb http://apt.kubernetes.io/ kubernetes-xenial main```
 4. ```apt-get update```
 5. 关闭swap ```swapoff -a```
-#安装docker
+
+#安装docker#
+
 ```apt-get install docker.io```
-#安装k8s
+#安装k8s#
+
 ```apt-get install kubeadm=1.9.0-00
 apt-get install kubelet=1.9.0-00
 apt-get install kubectl=1.9.0-00 ```
-#配置master
+
+#配置master#
+
 1. 初始化
 ```kubeadm init –pod-network-cidr 10.244.0.0/16```
 2. 配置kubectl
@@ -52,8 +59,11 @@ chown 0:0 ~/.kube/config```
 	}
 }
 ```
-#配置node
+
+#配置node#
+
 1. 同上，安装docker安装k8s
 2. 执行kubeadm join --token xxxxxx ....
 3. 同上，配置CNI
-#问题与解决
+
+#问题与解决#
