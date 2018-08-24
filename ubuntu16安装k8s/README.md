@@ -1,6 +1,10 @@
-#准备#
+ubuntu16安装k8s
+====
 
-1. ```apt-get update```
+准备
+----
+1. 更新apt-get
+```apt-get update```
 2. 配置docker源
 ```vi /etc/apt/sources.list.d/docker.list```
 ```
@@ -21,17 +25,23 @@ deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted unive
 ```deb http://apt.kubernetes.io/ kubernetes-xenial main```
 4. ```apt-get update```
 5. 关闭swap ```swapoff -a```
+____
 
-#安装docker#
-
+安装docker
+----
 ```apt-get install docker.io```
-#安装k8s#
+____
+
+安装k8s
+----
 
 ```apt-get install kubeadm=1.9.0-00
 apt-get install kubelet=1.9.0-00
 apt-get install kubectl=1.9.0-00 ```
+____
 
-#配置master#
+配置master
+----
 
 1. 初始化
 ```kubeadm init –pod-network-cidr 10.244.0.0/16```
@@ -59,11 +69,15 @@ chown 0:0 ~/.kube/config```
 	}
 }
 ```
+____
 
-#配置node#
+配置node
+----
 
 1. 同上，安装docker安装k8s
 2. 执行kubeadm join --token xxxxxx ....
 3. 同上，配置CNI
+____
 
-#问题与解决#
+问题与解决
+----
