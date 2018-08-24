@@ -50,10 +50,9 @@ ____
 chown 0:0 ~/.kube/config```
 3. 把初始化后返回的"kubeadm join --token xxxxxxxx" 记录下来，加入node时需要
 4. 配置CNI
-```mkdir -p /etc/cni/net.d/```
-```vi /etc/cni/net.d/10-mycnf.conf```
-```
-{
+```mkdir -p /etc/cni/net.d/ ```
+```vi /etc/cni/net.d/10-mycnf.conf ```
+```{
 	"cniVersion": "0.3.0",
 	"name": "mynet",
 	"type": "bridge",
